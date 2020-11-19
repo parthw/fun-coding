@@ -30,7 +30,7 @@ import (
 
 // Myconfig example
 type Myconfig struct {
-	username string `mapstructure:"username"`
+	Username string `mapstructure:"username"`
 }
 
 func main() {
