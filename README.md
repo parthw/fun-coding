@@ -11,7 +11,7 @@ Challenge being fulfilled by: [Parth Wadhwa](https://github.com/parthw/)
 
 ## Twitter posting
 
-[Day 1](https://twitter.com/_parthwadhwa/status/1327553840460169216) | [Day 2](https://twitter.com/_parthwadhwa/status/1327978800441745409) | [Day 3](https://twitter.com/_parthwadhwa/status/1328393904283029504) | [Day 4](https://twitter.com/_parthwadhwa/status/1328765998585978880) | [Day 5](https://twitter.com/_parthwadhwa/status/1329126310023598080) | [Day 6](https://twitter.com/_parthwadhwa/status/1329510972562821121)
+[Day 1](https://twitter.com/_parthwadhwa/status/1327553840460169216) | [Day 2](https://twitter.com/_parthwadhwa/status/1327978800441745409) | [Day 3](https://twitter.com/_parthwadhwa/status/1328393904283029504) | [Day 4](https://twitter.com/_parthwadhwa/status/1328765998585978880) | [Day 5](https://twitter.com/_parthwadhwa/status/1329126310023598080) | [Day 6](https://twitter.com/_parthwadhwa/status/1329510972562821121) | [Day 7](https://twitter.com/_parthwadhwa/status/1329857885317173253)
 
 ### Motivation
 
