@@ -1,0 +1,30 @@
+.NewPost {
+  text-align: center;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 2px 5px #cccccc;
+  margin: 10px;
+}
+
+.NewPost label {
+  display: block;
+  margin: 10px 0px;
+}
+
+.NewPost input,
+.NewPost select,
+.NewPost textarea {
+  display: block;
+  margin: auto;
+  width: 80%;
+  font: inherit;
+  outline: none;
+}
+
+.NewPost button {
+  border: 1px solid orange;
+  background-color: transparent;
+  outline: none;
+  color: orange;
+  padding: 10px;
+  margin: 10px;
+}

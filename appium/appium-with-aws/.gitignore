@@ -1,0 +1,66 @@
+
+logs
+ipa
+apk
+screenshots
+project/project
+project/target
+target
+.history
+.classpath
+.project
+.settings
+.target
+.idea
+.idea_modules
+RUNNING_PID
+# Directories #
+/build/
+/bin/
+# OS Files #
+.DS_Store
+# Package Files #
+*.war
+*.ear
+*.jar
+*.db
+######################
+# Windows
+######################
+# Windows thumb file caches
+Thumbs.db
+# Folder config file
+Desktop.ini
+######################
+# OSX
+######################
+.svn
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+# general
+dump
+/*.iml
+/out
+
+# Eclipse
+.cache
+.scala_dependencies
+# IDEA
+/.idea_modules
+
+project/boot
+project/plugins/target
+# general
+# Eclipse
+# IDEA
+/Reports/
+# node_modules
+node_modules/
+node/
+npm-debug.log
+/cssstats/
+
+

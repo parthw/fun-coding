@@ -1,0 +1,25 @@
+.Posts {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.Posts .Post {
+  border: 1px solid #eeeeee;
+  height: 200px;
+  width: 250px;
+  text-align: center;
+  margin: 4px;
+  padding: 10px;
+  box-shadow: 0px 2px 5px #cccccc;
+}
+
+.Author {
+  color: darkgrey;
+  margin: 4px;
+}
+
+.Post:hover {
+  cursor: pointer;
+  background-color: rgb(177, 210, 236);
+}

@@ -1,0 +1,23 @@
+.FullPost {
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 2px 5px #cccccc;
+  margin: 10px;
+  text-align: center;
+}
+
+.FullPost Button {
+  color: red;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  background-color: white;
+  outline: none;
+}
+
+.FullPost Button:hover {
+  cursor: pointer;
+}
+
+.FullPost div {
+  padding: 4px;
+}

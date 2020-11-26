@@ -19,10 +19,10 @@ type Persons []*Person
 func (p Persons) Len() int { return len(p) }
 
 //Less of Persons age
-func (p *Persons) Less(i, j int) bool { return (*p)[i].age < (*p)[j].age }
+func (p Persons) Less(i, j int) bool { return p[i].age < p[j].age }
 
 //Swap of Person
-func (p *Persons) Swap(i, j int) { (*p)[i], (*p)[j] = (*p)[j], (*p)[i] }
+func (p Persons) Swap(i, j int) { p[i], p[j] = p[j], p[i] }
 
 // Pop of heap
 func (p *Persons) Pop() (lastElement interface{}) {
@@ -50,7 +50,7 @@ func main() {
 	}
 	heap.Init(p)
 	heap.Push(p, &Person{age: 10, name: "Ten"})
-	fmt.Println("Printing p[0] %d ", (*p)[0])
+	fmt.Println("Printing p[0] ", (*(*p)[0]))
 	for p.Len() > 0 {
 		fmt.Printf("%v ", heap.Pop(p))
 	}

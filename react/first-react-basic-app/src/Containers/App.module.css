@@ -1,0 +1,22 @@
+.App {
+  background-color: lightgray;
+  text-align: center;
+}
+
+.App button {
+  padding: 1em;
+}
+
+.App button:hover {
+  cursor: grab;
+}
+
+.App button.green {
+  background-color: green;
+  color: white;
+}
+
+.App button.red {
+  background-color: red;
+  color: white;
+}

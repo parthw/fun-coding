@@ -1,0 +1,20 @@
+1. first-react-basic-app
+
+> Introduction to TS (Done)
+> CSS Modules (Done)
+> useState (Done)
+> useEffect (Done)
+> useRef (Done)
+> useContext (Done)
+
+> Create one app with 3 different paragraphs and toogle button to show them. (Done)
+> Color of toogle button should change when we click on it
+(Done)
+> Whenever we click on paragraphs, they will get deleted.
+(Done)
+> There should be one input element in each paragraphs, in which when we enter it will change the lable of the paragraphs. (Done)
+> At the top of toogle button it should show the count of paragraphs. (Done)
+> focus on second input element using useRef (Done)
+
+2. burger-builder
+
