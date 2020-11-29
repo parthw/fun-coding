@@ -4,6 +4,7 @@ import (
 	"log"
 	"net"
 	"strconv"
+	"time"
 
 	greetpb "example.com/grpcServerStream/api/gRPC"
 	"google.golang.org/grpc"
@@ -25,12 +26,15 @@ func (*server) Greet(req *greetpb.GreetRequest, resp greetpb.GreetService_GreetS
 		} else {
 			log.Println("Successfully sent message ID ", strconv.Itoa(i))
 		}
+
+		time.Sleep(10 * time.Second)
 	}
 
 	return nil
 }
 
-func main() {
+// StartServer to start gRPC server
+func StartServer() {
 	log.Println("Starting gRPC server")
 
 	lis, err := net.Listen("tcp", "127.0.0.1:9090")
