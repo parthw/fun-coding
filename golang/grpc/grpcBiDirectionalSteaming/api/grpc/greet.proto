@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package greetpb;
+
+option go_package = "example.com/grpcBiDirectionalStreaming/api/grpc/greetpb";
+
+message GreetRequest {
+  string fname = 1;
+  string lname = 2;
+}
+
+message GreetResponse { string result = 1; }
+
+service GreetService {
+  rpc Greet(stream GreetRequest) returns(stream GreetResponse){};
+}
