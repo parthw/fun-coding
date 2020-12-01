@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package greetpb;
+option go_package = "example.com/grpcUnary/greetpb";
+
+message Greeting {
+  string firstName = 1;
+  string lastName = 2;
+}
+
+message GreetFWRequest {
+  Greeting greeting = 1;
+  string forwardCompaitibilityCheck = 2;
+}
+
+message GreetRequest { Greeting greeting = 1; }
+
+message GreetResponse { string result = 1; }
+
+service GreetService {
+  rpc Greet(GreetRequest) returns(GreetResponse){};
+  rpc GreetFW(GreetFWRequest) returns(GreetResponse){};
+}
