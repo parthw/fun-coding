@@ -1,7 +1,7 @@
 package main
 
 // newgrpc is leading to forward compaitability by
-// adding interface UnimplementedFuncStruct
+// adding struct UnimplementedFuncStruct
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ type mynewgrpc struct {
 	newgrpc.UnimplementedFuncStruct
 }
 
-// If this gets commented then called from newgrpc package will be stdout
+// If this gets commented then called from newgrpc package will be the output
 func (mynewgrpc) IsThisOverriding() {
 	fmt.Println("called from main.go")
 }
