@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package sqrtpb;
+
+option go_package = "example.com/grpcFinale/api/sqrtpb";
+
+message SqrtRequest { int32 num = 1; }
+
+message SqrtResponse { double result = 1; }
+
+service SqrtService { rpc Sqrt(SqrtRequest) returns(SqrtResponse); }
