@@ -1,0 +1,12 @@
+### Post request
+POST http://localhost:8080/save HTTP/1.1
+content-type: application/json
+
+{
+    "title": "sample",
+    "author": "sample",
+    "description": "something"
+}
+
+### GET request
+GET http://localhost:8080/posts HTTP/1.1
