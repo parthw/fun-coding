@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -39,14 +40,17 @@ func startQuiz(problemFile *os.File, m *marks, inputTime int) {
 }
 
 func main() {
-	problemFile, err := os.Open("./problems.csv")
+	inputFile := flag.String("inputFile", "./problems.csv", "input csv file")
+	inputTime := flag.Int("inputTime", 10, "timeout time in seconds")
+	flag.Parse()
+
+	problemFile, err := os.Open(*inputFile)
 	if err != nil {
 		log.Fatalln("failed to open file")
 	}
 	defer problemFile.Close()
 
 	var m marks
-	inputTime := 1
-	startQuiz(problemFile, &m, inputTime)
+	startQuiz(problemFile, &m, *inputTime)
 	fmt.Println(m.correct, m.total)
 }
