@@ -1,0 +1,9 @@
+pyroscope:
+  address: http://pyroscope:4040
+  profile_url: http://localhost:4040
+
+jaeger:
+  endpoint: http://jaeger:14268/api/traces
+  grpc_endpoint: http://jaeger:14250
+
+
