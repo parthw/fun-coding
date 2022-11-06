@@ -1,0 +1,27 @@
+---
+containerDefinitions:
+- image: pyroscope/pyroscope:0.33.0
+  name: pyroscope
+  portMappings:
+  - hostPort: 80
+    protocol: tcp
+    containerPort: 80
+  command:
+  - server
+  - "-api-bind-addr"
+  - ":80"
+  - "-retention"
+  - "8h"
+  cpu: 256
+  memory: 256
+  memoryReservation: 256
+
+executionRoleArn: "arn"
+memory: '256'
+taskRoleArn: "arn"
+compatibilities:
+- EC2
+taskDefinitionArn: "arn"
+family: pyroscope
+networkMode: awsvpc
+cpu: '256'
