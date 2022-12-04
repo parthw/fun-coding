@@ -1,0 +1,7 @@
+require("v1.plugins-setup")
+require("v1.core.options")
+require("v1.core.keymaps")
+require("v1.core.coloscheme")
+require("v1.plugins.comment")
+require("v1.plugins.nvim-tree")
+require("v1.plugins.lualine")

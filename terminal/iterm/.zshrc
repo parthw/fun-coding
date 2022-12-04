@@ -4,7 +4,7 @@ fi
 source /etc/zprofile
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git zsh-z zsh-syntax-highlighting zsh-autosuggestions aws terraform poetry kubectl helm docker-compose)
+plugins=(git zsh-z zsh-syntax-highlighting zsh-autosuggestions aws terraform poetry kubectl helm docker-compose web-search)
 source $ZSH/oh-my-zsh.sh
 export TERM=xterm-256color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
@@ -17,7 +17,8 @@ export GPG_TTY=/dev/ttys000
 
 export GOPATH="$HOME/go"
 export GO111MODULE="on"
-export PATH="$HOME/bin:$GOPATH/bin:/usr/local/bin:$PATH"
+export SYSTEM_PYTHON_BIN="~/Library/Python/3.9/bin"
+export PATH="$HOME/bin:$GOPATH/bin:/usr/local/bin:$SYSTEM_PYTHON_BIN:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -32,6 +33,7 @@ export LC_ALL=en_US.UTF-8
 alias docker_clean_containers='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias busybox='kubectl run -i --tty busybox --image=busybox --restart=Never --rm -- sh'
 alias cat='bat'
+alias nv='nvim'
 find() {
     if [ $# = 1 ]
     then
@@ -46,7 +48,4 @@ complete -C '/usr/local/bin/aws_completer' aws
 complete -o nospace -C /usr/local/bin/terraform terraform
 source <(kubectl completion zsh)
 source <(helm completion zsh)
-
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
-
-source /Users/parthwadhwa/.zshrc_personal
