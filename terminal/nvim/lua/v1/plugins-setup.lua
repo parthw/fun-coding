@@ -32,7 +32,10 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua' -- file explorer
   use 'nvim-tree/nvim-web-devicons' -- nvim-tree icons
   use 'nvim-lualine/lualine.nvim' -- statusline plugin
-  use 'ibhagwan/fzf-lua' -- fuzzy search
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } -- dependency for better sorting performance
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' } -- fuzzy finder
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

@@ -34,14 +34,7 @@ alias docker_clean_containers='docker stop $(docker ps -a -q) && docker rm $(doc
 alias busybox='kubectl run -i --tty busybox --image=busybox --restart=Never --rm -- sh'
 alias cat='bat'
 alias nv='nvim'
-find() {
-    if [ $# = 1 ]
-    then
-        command find . -iname "*$@*"
-    else
-        command find "$@"
-    fi
-}
+alias f='fd --type f --exclude .git | fzf --height 30% --layout=reverse --border | xargs nvim'
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 command -v lsd > /dev/null && alias tree='lsd --tree'
 complete -C '/usr/local/bin/aws_completer' aws
