@@ -14,6 +14,15 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 -- configure nvim-tree
 nvimtree.setup({
   sort_by = "case_sensitive",
+  -- to change directory of new open file
+   -- update_cwd = true,
+  sync_root_with_cwd = true,
+  respect_buf_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true,
+    -- update_cwd = true,
+  },
   -- change folder arrow icons
   renderer = {
     icons = {

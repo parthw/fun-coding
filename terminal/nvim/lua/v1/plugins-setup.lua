@@ -62,6 +62,8 @@ return require('packer').startup(function(use)
   use { 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' } -- autoclose tags
 
 
+  use 'ahmedkhalf/project.nvim' -- to change root dir and manage projects
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

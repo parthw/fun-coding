@@ -17,7 +17,7 @@ export GPG_TTY=/dev/ttys000
 
 export GOPATH="$HOME/go"
 export GO111MODULE="on"
-export SYSTEM_PYTHON_BIN="~/Library/Python/3.9/bin"
+export SYSTEM_PYTHON_BIN="/Users/parthwadhwa/Library/Python/3.9/bin"
 export PATH="$HOME/bin:$GOPATH/bin:/usr/local/bin:$SYSTEM_PYTHON_BIN:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -34,7 +34,8 @@ alias docker_clean_containers='docker stop $(docker ps -a -q) && docker rm $(doc
 alias busybox='kubectl run -i --tty busybox --image=busybox --restart=Never --rm -- sh'
 alias cat='bat'
 alias nv='nvim'
-alias f='fd --type f --exclude .git | fzf --height 30% --layout=reverse --border | xargs nvim'
+alias sf='fd --full-path /Users/parthwadhwa/Documents/ --type f --max-depth 8 --exclude .git | fzf --height 30% --layout=reverse --border | xargs nvim'
+alias sd='fd --full-path /Users/parthwadhwa/Documents/ --type d --max-depth 8 --exclude .git | fzf --height 30% --layout=reverse --border | xargs nvim'
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 command -v lsd > /dev/null && alias tree='lsd --tree'
 complete -C '/usr/local/bin/aws_completer' aws
@@ -42,3 +43,4 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 source <(kubectl completion zsh)
 source <(helm completion zsh)
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+source ~/.zshrc_personal
