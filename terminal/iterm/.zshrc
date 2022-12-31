@@ -43,4 +43,6 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 source <(kubectl completion zsh)
 source <(helm completion zsh)
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+
+export KUBECTL_EXTERNAL_DIFF='delta --side-by-side --navigate'
 source ~/.zshrc_personal

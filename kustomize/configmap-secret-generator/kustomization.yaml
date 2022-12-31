@@ -1,0 +1,24 @@
+commonAnnotations:
+  kustomize/annotation: common
+
+commonLabels:
+  kustomize/label: common
+
+configMapGenerator:
+  - name: myconfigmap
+    files:
+      - config-file.yaml
+secretGenerator:
+  - name: mysecret
+    files:
+      - secret-file.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    kustomize/type: generated
+  annotations:
+    kustomize/type: generated
+
+resources:
+  - deployment.yaml

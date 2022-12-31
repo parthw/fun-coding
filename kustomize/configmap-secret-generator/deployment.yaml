@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  labels:
+    app: my-app
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: app
+          image: my-app
+          volumeMounts:
+            - name: configs
+              mountPath: /configs
+            - name: password
+              mountPath: /password
+      volumes:
+        - name: configs
+          configMap:
+            name: myconfigmap
+        - name: password
+          secret:
+            secretName: mysecret
