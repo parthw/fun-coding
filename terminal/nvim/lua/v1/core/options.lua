@@ -44,3 +44,9 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+-- folding
+opt.foldmethod = "expr"
+opt.foldnestmax = 1
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+
