@@ -5,4 +5,5 @@ const (
 	privateKeySize = 64
 	publicKeySize  = 32
 	seedSize       = 32
+	addressSize    = 20
 )

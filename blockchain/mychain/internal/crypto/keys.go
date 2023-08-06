@@ -3,6 +3,8 @@ package crypto
 import (
 	"crypto/ed25519"
 	"crypto/rand"
+	"encoding/hex"
+	"errors"
 	"io"
 )
 
@@ -20,19 +22,41 @@ func (p *PrivateKey) Sign(msg []byte) []byte {
 
 func (p *PrivateKey) PublicKey() *PublicKey {
 	b := make([]byte, publicKeySize)
-	copy(b, p.key[32:])
+	copy(b, p.key[len(p.key)-publicKeySize:])
 	return &PublicKey{
 		key: b,
 	}
 }
 
-func GeneratePrivateKey() (*PrivateKey, error) {
-	seed := make([]byte, seedSize)
-	_, err := io.ReadFull(rand.Reader, seed)
+func NewPrivateKeyFromSeed(seed string) (*PrivateKey, error) {
+	b, err := hex.DecodeString(seed)
 	if err != nil {
 		return nil, err
 	}
 
+	if len(b) != seedSize {
+		return nil, errors.New("invalid seed size")
+	}
+	return &PrivateKey{
+		key: ed25519.NewKeyFromSeed(b),
+	}, nil
+}
+
+func NewSeed() ([]byte, error) {
+	b := make([]byte, seedSize)
+	_, err := io.ReadFull(rand.Reader, b)
+	if err != nil {
+		return nil, err
+	}
+
+	return b, nil
+}
+
+func GeneratePrivateKey() (*PrivateKey, error) {
+	seed, err := NewSeed()
+	if err != nil {
+		return nil, err
+	}
 	return &PrivateKey{
 		key: ed25519.NewKeyFromSeed(seed),
 	}, nil
@@ -46,6 +70,24 @@ func (p *PublicKey) Bytes() []byte {
 	return p.key
 }
 
+func (p *PublicKey) Address() *Address {
+	return &Address{
+		value: p.key[len(p.key)-addressSize:],
+	}
+}
+
 func (p *PublicKey) Verify(msg, sig []byte) bool {
 	return ed25519.Verify(p.key, msg, sig)
+}
+
+type Address struct {
+	value []byte
+}
+
+func (a *Address) Bytes() []byte {
+	return a.value
+}
+
+func (a *Address) String() string {
+	return hex.EncodeToString(a.value)
 }
