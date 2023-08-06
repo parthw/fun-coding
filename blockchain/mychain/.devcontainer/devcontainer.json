@@ -1,0 +1,22 @@
+{
+	"name": "Existing Docker Compose (Extend)",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "mychain",
+	"workspaceFolder": "/mychain",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.go",
+				"trixnz.go-to-method",
+				"esbenp.prettier-vscode",
+				"zxh404.vscode-proto3",
+				"Gruntfuggly.todo-tree",
+				"redhat.vscode-yaml",
+				"waderyan.gitblame"
+			]
+		}
+	},
+	"remoteUser": "root"
+}
