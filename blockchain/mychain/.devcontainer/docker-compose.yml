@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  
+  mychain:
+    build:
+      context: ../.
+      dockerfile: ./.devcontainer/devcontainer.Dockerfile
+    ports:
+      - "6060:6060"
+      - "8080:8080"
+    volumes:
+      - ../.:/mychain
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
