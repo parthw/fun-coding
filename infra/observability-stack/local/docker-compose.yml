@@ -1,31 +1,43 @@
 services:
   prometheus:
-    image: prom/prometheus:v2.36.2
+    image: prom/prometheus:v3.3.0
     ports:
       - 9000:9090
     volumes:
       - ./prometheus:/etc/prometheus
-      - prometheus-data:/prometheus
     command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
   grafana:
-    image: grafana/grafana:9.0.1
+    image: grafana/grafana:11.6.1
     ports:
       - 3000:3000
     restart: unless-stopped
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - grafana-data:/var/lib/grafana
-  alertmanager:
-    image: prom/alertmanager:v0.24.0
-    restart: unless-stopped
+      - grafana-data:/var/lib/grafana  
+  pyroscope:
+    image: grafana/pyroscope:latest
     ports:
-      - "9093:9093"
+      - "4040:4040"
+    environment:
+      - PYROSCOPE_RETENTION=168h  # 7 days
+      - PYROSCOPE_LOG_LEVEL=info
+  loki:
+    image: grafana/loki:3.5.0
+    ports:
+      - "3100:3100"
     volumes:
-      - "./alertmanager:/config"
-      - alertmanager-data:/data
-    command: --config.file=/config/alertmanager.yml --log.level=debug
+      - ./loki/config.yaml:/etc/loki/local-config.yaml
+    command: -config.file=/etc/loki/local-config.yaml
+  alloy:
+    image: grafana/alloy:v1.8.2
+    ports:
+      - 12345:12345
+      - 4317:4317
+      - 4318:4318
+    volumes:
+      - ./alloy/config.alloy:/etc/alloy/config.alloy
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
 
 volumes:
-  prometheus-data:
   grafana-data:
-  alertmanager-data:
