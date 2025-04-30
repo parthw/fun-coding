@@ -1,26 +1,6 @@
-
-prometheus.exporter.cadvisor "example" {
-  docker_host = "unix:///var/run/docker.sock"
-
-  storage_duration = "5m"
-}
-
-
-// Configure a prometheus.scrape component to collect cadvisor metrics.
-prometheus.scrape "scraper" {
-  targets    = prometheus.exporter.cadvisor.example.targets
-  forward_to = [ prometheus.remote_write.demo.receiver ]
-
-
-  scrape_interval = "10s"
-}
-
-// Configure a prometheus.remote_write component to send metrics to a Prometheus server.
-prometheus.remote_write "demo" {
-  endpoint {
-    url = "http://prometheus:9090/api/v1/write"
-  }
-}
+# This configuration file is for Alloy, a log collection of all docker containers.
+# It uses the Docker socket to discover containers and collect logs from them.
+# The logs are then sent to Loki for storage and querying.
 discovery.docker "linux" {
   host = "unix:///var/run/docker.sock"
 }
