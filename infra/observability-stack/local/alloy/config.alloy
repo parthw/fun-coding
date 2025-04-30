@@ -1,6 +1,6 @@
-# This configuration file is for Alloy, a log collection of all docker containers.
-# It uses the Docker socket to discover containers and collect logs from them.
-# The logs are then sent to Loki for storage and querying.
+// # This configuration file is for Alloy, a log collection of all docker containers.
+// # It uses the Docker socket to discover containers and collect logs from them.
+// # The logs are then sent to Loki for storage and querying.
 discovery.docker "linux" {
   host = "unix:///var/run/docker.sock"
 }
