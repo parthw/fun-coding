@@ -10,3 +10,4 @@ scrape_configs:
           - 'prometheus:9090'
           - 'statsd:9102'
           - 'loki:3100'
+          - 'cadvisor:8080'
