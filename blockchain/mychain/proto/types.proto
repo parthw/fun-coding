@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "parthw.in/blockchain/mychain/proto";
+
+message Block {
+  Header header = 1;
+  repeated Transaction transactions = 2;
+
+}
+
+message Header {
+  int32 version = 1;
+  int32 height = 2;
+  bytes previous_hash = 3;
+  bytes root_hash = 4; // merkle root hash of transactions
+  int64 timestamp = 5;
+}
+
+message Transaction {
+    string from = 1;
+    string to = 2;
+    int64 amount = 3;
+}
