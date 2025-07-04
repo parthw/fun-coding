@@ -1,0 +1,15 @@
+[project]
+name = "ai-service"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "crewai[tools]>=0.130.0",
+    "fastapi[standard]>=0.115.12",
+    "pandas>=2.3.0",
+    "pydantic-ai>=0.2.8",
+    "pydantic-settings>=2.9.1",
+    "pytrials>=1.0.0",
+    "termcolor>=3.1.0",
+]

@@ -1,0 +1,6 @@
+dev_mode:
+  enabled: true
+
+default_agent:
+  model: "llama3.1:8b"
+  provider_base_url: "http://localhost:11434/v1"
