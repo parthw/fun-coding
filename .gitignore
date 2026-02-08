@@ -106,3 +106,8 @@ dist
 # zig
 zig-cache/
 zig-out/
+
+# dotnet
+bin/
+obj/
+
